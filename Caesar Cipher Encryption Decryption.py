@@ -87,8 +87,7 @@ while keep_going:
   text = input("Type your message:\n").lower()
   shift = shift_validator(lower_limit=0, higher_limit=25, prompt=shift_prompt)
   caesar(text, shift, direction)
-  user_choice = text_validator(option_a="yes", option_b="no", prompt=repetition_prompt)
-  if user_choice == "yes":
+  if (user_choice := text_validator(option_a="yes", option_b="no", prompt=repetition_prompt)) == "yes":
     keep_going = True
   elif user_choice == "no":
     keep_going = False
